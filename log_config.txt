@@ -1,0 +1,1 @@
+apache2;C:\laragon\bin\apache\httpd-2.4.54-win64-VS16\logs\access.log;C:\laragon\bin\apache\httpd-2.4.54-win64-VS16\logs\error.log
