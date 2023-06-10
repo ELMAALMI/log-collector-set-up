@@ -1,0 +1,22 @@
+[Unit]
+Description=Logger is log collector created by el maalmi billal
+After=syslog.target
+After=network.target
+[Service]
+SuccessExitStatus=143
+
+User=logger
+Group=loggger
+
+[Service]
+
+Type=simple
+Environment="JAVA_HOME="
+WorkingDirectory=/opt/logger
+
+ExecStart=${JAVA_HOME}/bin/java -jar logger.jar
+ExecStop=/bin/kill -15 $MAINPID
+ExecReload = /usr/local/bin/Service_Name.sh reload
+
+[Install]
+WantedBy=multi-user.target
